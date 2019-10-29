@@ -1,0 +1,42 @@
+<!doctype  html>
+<html>
+<body>
+    <form  id="uform">
+            <div  class="message_input_wrapper">
+                    <input  id="user"  class="username_input"  placeholder="username"  />
+                    </div>
+                    <button id="change_username"  class="change_username">Submit Username</button>
+    </form>
+</div>
+</div>
+<script src="socket.io.js"></script>
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script  src="https://cdn.jsdelivr.net/gh/rexeze/formatTimeStamp/src/index.min.js"></script>
+<script
+  type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script nomodule defer src="js.cookie.js"></script>
+
+<script>
+    var socket = io.connect('http://localhost:3000');
+var chatroom = document.getElementById('chatroom');
+$('#uform').submit(function(e){
+    console.log('uform');
+    let  li  =  document.createElement("li");
+    e.preventDefault();
+    console.log($("#user").val());
+    socket.emit("username", $("#user").val());
+    Cookies.set('user', $("#user").val());
+    // document.cookie ='user='+$("#user").val();
+    // document.getElementById('uform').innerHTML = '';
+    // document.getElementById('cform').innerHTML = '<div  class="message_input_wrapper">'+
+    //     '<input  id="message"  class="message_input"  placeholder="Type your message here..."  />'+
+    //     '</div>'+
+    //     '<button id="send_message" class="send_message">Send</button>';
+    window.location.replace("/csocket");
+    $("#user").val("");
+    return false;
+    });
+</script>
+</body>
+</html>

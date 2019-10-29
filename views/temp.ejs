@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat up</title>
+<h1>Express your passion :D </h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <form action="/" method="POST">message: 
+        <input type="text" name="message"/>
+        <input type="submit" value="Submit"/>
+      </form>
+    <p id="demo"></p>
+    <div>
+        <% passage.forEach((p => { %>
+          <p><%= p %></p>
+      <% }) %>
+    </div>
+    
+    <script>
+        var passage = <%= cordinates.passage %>;
+        var i, text = '';
+        for (i = 0; i < passage.length; i++) { 
+        text += passage[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+      </script>
+</body>
+</html>
+

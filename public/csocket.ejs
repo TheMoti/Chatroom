@@ -1,0 +1,38 @@
+<!doctype  html>
+<html>
+<body>
+    <form  id="uform">
+    </form>
+    <form  id="cform">
+    </form>
+    <p id = "chatroom"></p>
+</div>
+</div>
+<script src="socket.io.js"></script>
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script  src="https://cdn.jsdelivr.net/gh/rexeze/formatTimeStamp/src/index.min.js"></script>
+<script
+  type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script nomodule defer src="js.cookie.js"></script>
+
+<script>
+var socket = io.connect('http://localhost:3000');
+var chatroom = document.getElementById('chatroom');
+socket.on("chat", (data) =>{
+    console.log('data?', data);
+    let  li  =  document.createElement("li");
+    chatroom.appendChild(li).append(data.user, " : ",data.message );
+});
+$('#cform').submit(function(e){
+    console.log('form');
+    let  li  =  document.createElement("li");
+    e.preventDefault(); // prevents page reloading
+    socket.emit("chat message", {message:$("#message").val(), user:Cookies.get('user')});
+    //chatroom.appendChild(li).append(socket.username, $("#message").val());
+    $("#message").val("");
+      return false;
+    });
+</script>
+</body>
+</html>

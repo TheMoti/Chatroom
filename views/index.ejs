@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<h1> </h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <form action="/chat" method="POST">message: 
+        <input type="text" name="message"/>
+        <input type="submit" value="Submit"/>
+      </form>
+    <p id="demo"> <%= passage %> </p>
+    
+    <!-- <script>
+        var p = {{ passage }};
+        console.log("P",p);
+        var passage = p.split(",");
+        console.log(passage);
+        var i, text = '';
+        for (i = 0; i < passage.length; i++) { 
+        text += passage[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+      </script>
+      -->
+</body>
+</html>
+
