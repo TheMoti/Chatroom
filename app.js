@@ -17,7 +17,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
-var indexRouter = require('./routes/index');
+//var indexRouter = require('./routes/index');
 
 var app = express();
 var server = require("http").createServer(app);
@@ -80,7 +80,7 @@ app.get('/csocket', function (req, res) {
   res.render('csocket.ejs');
 });
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
