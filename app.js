@@ -74,9 +74,11 @@ app.get('/socket', function (req, res) {
   res.render('socket.ejs');
 });
 app.get('/usocket', function (req, res) {
+  console.log("usocketiuuu");
   res.render('usocket.ejs');
 });
 app.get('/csocket', function (req, res) {
+  console.log("csocketiuuu");
   res.render('csocket.ejs');
 });
 
