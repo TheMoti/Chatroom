@@ -7,7 +7,7 @@ services:
     links:
     - mongo
     volumes:
-    - /home/motahare/Desktop/mydata:/usr/src/app/data
+    - /home/ubuntu/mydata:/usr/src/app/data
 
   mongo:
     image: mongo
