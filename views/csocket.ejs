@@ -21,7 +21,7 @@
 
 <script>
 if(!Cookies.get('user')) window.location.replace("/usocket");
-var socket = io.connect('www.crapbag.ir:3000');
+var socket = io.connect('www.crapbag.ir');
 var chatroom = document.getElementById('chatroom');
 socket.on("chat", (data) =>{
     console.log('data?', data);
