@@ -17,7 +17,7 @@
     "mongo": "^0.1.0",
     "mongod": "^2.0.0",
     "mongodb": "^3.3.3",
-    "mongoose": "^5.7.4",
+    "mongoose": "^5.7.5",
     "mongoose-timestamp": "^0.6.0",
     "morgan": "~1.9.1",
     "socket.io": "^2.3.0",
